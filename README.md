@@ -35,10 +35,13 @@
 
 ## 🌐 03. Webプロトタイプの体験方法
 
-本プロジェクトで構築したWebプロトタイプは、ローカルPCのブラウザで直接動作します。
+### 🚀 オンラインで体験する（GitHub Pages）
+ブラウザから以下のURLで直接プロトタイプを操作・閲覧できます：  
+👉 **[https://shintaroim.github.io/okamoto/](https://shintaroim.github.io/okamoto/)**
 
+### 💻 ローカルPCで体験する
 - **起動方法**:  
-  `03_Webサイトプロトタイプ/prototype/index.html` をダブルクリック（またはChrome等で開く）してください。
+  `03_Webサイトプロトタイプ/prototype/index.html` またはルートの `index.html` をダブルクリック（またはChrome等で開く）してください。
 - **特徴**:  
   画面最上部に **プロトタイプ・スイッチャーバー（PROTOTYPE BAR）** が組み込まれており、以下の4画面を1クリックで切り替え可能です。
   1. **総合LP (`index.html`)**: ファーストビュー、実績、サービス一覧、お問い合わせ
