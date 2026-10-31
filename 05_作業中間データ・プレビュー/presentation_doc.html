@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>岡本武司（瑞司）Web展開 全企画案 詳細説明資料</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 13mm 15mm 13mm 15mm;
+            @bottom-right {
+                content: "Page " counter(page) " / " counter(pages);
+                font-size: 8.5pt;
+                color: #64748b;
+                font-family: "BIZ UDPGothic", "Meiryo", sans-serif;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: "BIZ UDPGothic", "Meiryo", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+            color: #2d3748;
+            background-color: #ffffff;
+            line-height: 1.52;
+            font-size: 9.3pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* ヘッダー */
+        .doc-header {
+            border-bottom: 2.5px solid #1e3a8a;
+            padding-bottom: 5px;
+            margin-bottom: 9px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .doc-title {
+            font-size: 13.8pt;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.2px;
+            white-space: nowrap;
+        }
+
+        .doc-badge {
+            font-size: 8.5pt;
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 2.5px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .doc-meta {
+            font-size: 8.5pt;
+            color: #64748b;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* セクション見出し */
+        h2 {
+            font-size: 11.2pt;
+            color: #1e3a8a;
+            border-left: 4.5px solid #ea580c;
+            padding-left: 8px;
+            margin: 8px 0 5px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 9.8pt;
+            color: #0f172a;
+            margin: 6px 0 4px 0;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0 0 5px 0;
+        }
+
+        /* カード・ボックス */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px 11px;
+            margin-bottom: 7px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .card-highlight {
+            background: #f8fafc;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .card-accent {
+            background: #fff7ed;
+            border-left: 4px solid #ea580c;
+        }
+
+        .card-green {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 7px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 7px;
+            margin-bottom: 7px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-bottom: 7px;
+        }
+
+        /* テーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.8pt;
+            margin-bottom: 7px;
+        }
+
+        th {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 5px 7px;
+            font-weight: bold;
+            text-align: left;
+            border: 1px solid #0f172a;
+        }
+
+        td {
+            padding: 5px 7px;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        /* バッジ */
+        .badge {
+            display: inline-block;
+            padding: 1.5px 6px;
+            border-radius: 3px;
+            font-size: 7.8pt;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-orange { background: #ffedd5; color: #9a3412; }
+        .badge-green { background: #dcfce7; color: #166534; }
+        .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+        /* リスト */
+        ul {
+            margin: 0 0 5px 0;
+            padding-left: 17px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+
+        /* バリューステップフロー */
+        .step-container {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 7px;
+        }
+        .step-item {
+            flex: 1;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-top: 3px solid #1e3a8a;
+            border-radius: 4px;
+            padding: 6px 8px;
+            font-size: 8.4pt;
+        }
+        .step-num {
+            font-weight: bold;
+            color: #1e3a8a;
+            font-size: 8pt;
+            margin-bottom: 2px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 8.8pt;
+            margin-bottom: 2px;
+        }
+
+        /* UI設計プレビュー枠 */
+        .wireframe-box {
+            background: #f1f5f9;
+            border: 1px dashed #94a3b8;
+            border-radius: 4px;
+            padding: 6px 9px;
+            font-size: 8.2pt;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .text-bold { font-weight: bold; }
+        .text-accent { color: #ea580c; font-weight: bold; }
+        .text-primary { color: #1e3a8a; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         PAGE 1: 全体戦略構想＆Webエコシステム
+         ========================================== -->
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">全体構想</span>岡本武司（おかもっちゃん / 瑞司）Web戦略全体像</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.1</div>
+    </div>
+
+    <div class="card card-highlight">
+        <p style="margin:0; font-size:9.4pt; line-height:1.45;">
+            <strong>【プロジェクトの目的】</strong>
+            早稲田大学競走部主将からラグビー早明戦出場、名門高校ラグビー部監督を経て、53歳未経験から独学でプロ鉛筆画家へ転身した「岡本武司（瑞司）」の唯一無二のストーリーと作品力をWeb上に体系化。
+            単なる作品展示にとどまらず、<strong>「高単価案件の即効受注」「継続課金ファンコミュニティ」「グローバル・インバウンド展開」</strong>を同時に実現する収益エコシステムを構築します。
+        </p>
+    </div>
+
+    <h2>1. 岡本武司氏が誇る3大コア資産とWebでの最大化</h2>
+    <div class="grid-3">
+        <div class="card" style="border-top:3px solid #1e3a8a;">
+            <div class="step-title">① 圧倒的な不屈のストーリー</div>
+            <p style="font-size:8.4pt; color:#475569; margin:0;">
+                競走部主将からラグビー転向・早明戦出場、体育教諭として全国大会へ導いた熱血指導力。「ワクワクに年齢は関係ない」を53歳で体現する生き様が、強い共感と信頼を生みます。
+            </p>
+        </div>
+        <div class="card" style="border-top:3px solid #ea580c;">
+            <div class="step-title">② 魂を揺さぶるリアル鉛筆画</div>
+            <p style="font-size:8.4pt; color:#475569; margin:0;">
+                白と黒のみで命の輝き・瞳の温もりを描き出す圧倒的描写力。見た瞬間に息を呑み、感涙を誘う作品は、高単価な肖像画や記念品として極めて高い希少価値を持ちます。
+            </p>
+        </div>
+        <div class="card" style="border-top:3px solid #16a34a;">
+            <div class="step-title">③ 人を巻き込む熱血人間力</div>
+            <p style="font-size:8.4pt; color:#475569; margin:0;">
+                「誰でも描ける！」「可能性を信じる」温かい包容力と突破力。生徒を熱狂させるオンライン教室や、企業の挑戦心に火をつけるモチベーション講演へ直結します。
+            </p>
+        </div>
+    </div>
+
+    <h2>2. Web展開が果たすべき4つのミッション</h2>
+    <table>
+        <tr>
+            <th style="width:22%;">ミッション</th>
+            <th style="width:38%;">具体的な役割・機能</th>
+            <th style="width:40%;">達成される成果・ビジネスインパクト</th>
+        </tr>
+        <tr>
+            <td><strong>① 社会的信用の確立</strong></td>
+            <td>経歴・メディア実績・作品制作風景・推薦文を体系化</td>
+            <td>学校・法人・メディア関係者からの問い合わせ確度・成約率が大幅向上</td>
+        </tr>
+        <tr>
+            <td><strong>② 高単価リードの即効獲得</strong></td>
+            <td>特注肖像画（15万〜50万）と熱血講演（15万〜30万）の特化LP</td>
+            <td>最短1〜2ヶ月で初期開発コストを回収し、強固な単発キャッシュを創出</td>
+        </tr>
+        <tr>
+            <td><strong>③ 継続ストック収益の構築</strong></td>
+            <td>月額課金型オンラインアカデミー＆会員限定サロン</td>
+            <td>生徒数100〜200名で毎月50万〜150万円の安定した自動継続収入を確保</td>
+        </tr>
+        <tr>
+            <td><strong>④ 越境EC＆インバウンド</strong></td>
+            <td>多言語ECショップ・訪日外国人向け和の鉛筆画体験予約</td>
+            <td>国内市場にとどまらず、台湾・欧米の富裕層・アートファンへ外貨獲得拡大</td>
+        </tr>
+    </table>
+
+    <h2>3. 4つのWebサイト企画の役割分担と導線アーキテクチャ</h2>
+    <div class="card" style="background:#f8fafc; border:1.5px solid #cbd5e1; padding:9px 12px;">
+        <div style="font-weight:bold; color:#0f172a; margin-bottom:6px; font-size:9.1pt;">
+            【全体トラフィック導線フロー】
+        </div>
+        <div class="step-container">
+            <div class="step-item" style="border-top-color:#64748b;">
+                <div class="step-num">流入元 (集客)</div>
+                <div class="step-title">SNS / YouTube / 個展</div>
+                <div style="color:#64748b; font-size:7.8pt;">Instagram・早稲田OB人脈・制作ショート動画</div>
+            </div>
+            <div class="step-item" style="border-top-color:#1e3a8a;">
+                <div class="step-num">旗艦母艦</div>
+                <div class="step-title">【案A】総合ポータル</div>
+                <div style="color:#64748b; font-size:7.8pt;">全活動のハブ・信頼性付与・検索流入受け皿</div>
+            </div>
+            <div class="step-item" style="border-top-color:#ea580c;">
+                <div class="step-num">最優先キャッシュ</div>
+                <div class="step-title">【案B】即効獲得LP</div>
+                <div style="color:#64748b; font-size:7.8pt;">特注肖像画・企業講演の成約直結フォーム</div>
+            </div>
+            <div class="step-item" style="border-top-color:#16a34a;">
+                <div class="step-num">ストック収益</div>
+                <div class="step-title">【案C】オンライン校</div>
+                <div style="color:#64748b; font-size:7.8pt;">動画受講・月1Zoom添削・月額サブスク課金</div>
+            </div>
+            <div class="step-item" style="border-top-color:#9333ea;">
+                <div class="step-num">物販・海外展開</div>
+                <div class="step-title">【案D】越境ECショップ</div>
+                <div style="color:#64748b; font-size:7.8pt;">公式画材・日めくり・訪日体験ワークショップ</div>
+            </div>
+        </div>
+        <p style="font-size:8.3pt; color:#475569; margin:4px 0 0 0;">
+            ※すべてのページから「公式LINE」「メールフォーム」へシームレスに連携。一度訪れた見込み客を確実にリスト化し、リピート購入や長期受講へ育成します。
+        </p>
+    </div>
+
+    <!-- ==========================================
+         PAGE 2: 【企画案A】総合ブランド＆ハブ型ポータル
+         ========================================== -->
+    <div class="page-break"></div>
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">企画案 A</span>【総合ブランド＆ハブ型ポータルサイト】仕様設計</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.2</div>
+    </div>
+
+    <div class="card card-highlight">
+        <div class="grid-2" style="margin-bottom:0;">
+            <div>
+                <strong>【コンセプト】</strong>「鉛筆画家 瑞司（岡本武司）のすべてが集まる旗艦基地」<br>
+                <strong>【主要ターゲット】</strong>ファン、学校教育関係者、企業幹事、メディア、海外愛好家
+            </div>
+            <div>
+                <strong>【推奨システム】</strong>STUDIO / WordPress（自社ドメイン運用）<br>
+                <strong>【構築目安期間】</strong>約3〜4週間 ｜ <strong>【開発難易度】</strong>標準
+            </div>
+        </div>
+    </div>
+
+    <h2>1. 企画の狙いと解決する課題</h2>
+    <p>
+        岡本武司氏は「鉛筆画家」「高校教諭・名監督」「熱血講演家」「絵画講師」と非常に多彩な顔を持っています。情報が散乱していると「結局何の人なのか」「どこに何を頼めるのか」が訪問者に伝わりません。本ポータルは、岡本武司の<strong>全人生と多角的な活動を1つの美しいブランド体験として統合</strong>し、社会的信用を最大化します。
+    </p>
+
+    <h2>2. サイト構成とワイヤーフレーム設計</h2>
+    <div class="grid-2">
+        <div class="wireframe-box">
+            <strong>【主要セクション一覧】</strong>
+            <ul>
+                <li><strong>① グローバルヘッダー:</strong> ブランドロゴ、各活動ナビ、公式ショップ・教室ボタン</li>
+                <li><strong>② ヒーローエリア:</strong> 「白と黒の濃淡に、命と温もりを宿す。絵は言葉を超える。」＋代表作ビジュアル＋活動領域へのスムーズ誘導</li>
+                <li><strong>③ 4つの活動ピラー (Activities):</strong>
+                    <ul>
+                        <li>特注肖像画制作（案Bへ誘導）</li>
+                        <li>わくわく鉛筆画教室（案Cへ誘導）</li>
+                        <li>企業講演・チームビルディング（案Bへ誘導）</li>
+                        <li>厳選画材EC＆海外展開（案Dへ誘導）</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="wireframe-box">
+            <strong>【信頼性・ブランディングセクション】</strong>
+            <ul>
+                <li><strong>④ 作品ギャラリー (Gallery):</strong> スポーツ選手の躍動、人物の魂、愛犬・家族、パステル画（カテゴリー別タブ切り替え）</li>
+                <li><strong>⑤ 代表ストーリー年表 (History):</strong>
+                    <ul>
+                        <li>幼少〜高校：甲子園を目指した野球少年</li>
+                        <li>大学時代：早大競走部主将からラグビー部転向・早明戦</li>
+                        <li>教諭時代：名門高校体育教諭・ラグビー部全国へ熱血指導</li>
+                        <li>53歳：独学で鉛筆画に挑戦、プロ画家「瑞司」誕生</li>
+                    </ul>
+                </li>
+                <li><strong>⑥ お知らせ・個展情報 / お問い合わせ窓口</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. 導線設計とコンバージョン戦略</h2>
+    <table>
+        <tr>
+            <th style="width:25%;">来訪ユーザー属性</th>
+            <th style="width:40%;">心理状態・知りたいこと</th>
+            <th style="width:35%;">ポータル内での誘導先・ゴール</th>
+        </tr>
+        <tr>
+            <td><strong>ラグビー・野球関係者</strong></td>
+            <td>「おかもっちゃんの近況を知りたい」「記念品を作りたい」</td>
+            <td>ストーリー年表で感動 ➔ <strong>【案B】肖像画注文LPへ</strong></td>
+        </tr>
+        <tr>
+            <td><strong>企業経営者・研修担当</strong></td>
+            <td>「社員の士気を高める本物の講演者を探している」</td>
+            <td>異色の突破歴を確認 ➔ <strong>【案B】講演依頼フォームへ</strong></td>
+        </tr>
+        <tr>
+            <td><strong>絵を始めたいシニア</strong></td>
+            <td>「53歳から独学？自分も描けるようになるか学びたい」</td>
+            <td>ギャラリー・哲学に共感 ➔ <strong>【案C】オンライン校へ</strong></td>
+        </tr>
+        <tr>
+            <td><strong>アートファン・海外客</strong></td>
+            <td>「作品を購入したい」「原画やグッズが欲しい」</td>
+            <td>高解像度ギャラリー ➔ <strong>【案D】公式ショップへ</strong></td>
+        </tr>
+    </table>
+
+    <h2>4. 運用・更新体制と保守コストの最小化</h2>
+    <div class="card card-accent">
+        <p style="margin:0; font-size:8.8pt;">
+            <strong>【運用のポイント】</strong>
+            ノーコードツール「STUDIO」または直感的なCMSを採用することで、岡本氏本人や事務スタッフがスマホやPCから簡単に「個展情報」「新作ギャラリー」を追加可能。制作会社への毎月の更新外注費をゼロに抑え、スピード感のある情報発信を維持します。
+        </p>
+    </div>
+
+    <!-- ==========================================
+         PAGE 3: 【企画案B】即効キャッシュ化LP
+         ========================================== -->
+    <div class="page-break"></div>
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">企画案 B</span>【即効キャッシュ化・高単価リード特化LP】仕様設計</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.3</div>
+    </div>
+
+    <div class="card card-accent">
+        <div class="grid-2" style="margin-bottom:0;">
+            <div>
+                <strong>【コンセプト】</strong>「最短・最高単価で成約を生み出す熱血セールスファネル」<br>
+                <strong>【最重要役割】</strong>公開後1〜2ヶ月で初期投資を即時回収する最優先施策
+            </div>
+            <div>
+                <strong>【ターゲット】</strong>高校ラグビー・野球OB、保護者会、企業経営者、周年行事幹事<br>
+                <strong>【平均成約単価】</strong>15万円〜50万円 ｜ <strong>【CV目標】</strong>月4〜8件
+            </div>
+        </div>
+    </div>
+
+    <h2>1. なぜ「案B（LP）」を最優先で立ち上げるべきか？</h2>
+    <p>
+        ポータルやスクールは中長期的な資産ですが、Web立ち上げ初期に最も必要なのは<strong>「即効性のある現金収入と成功実績」</strong>です。岡本氏の既存人脈（早稲田OB、高校ラグビー関係者、経営者仲間）に直接届く高単価LPを最初に公開することで、特注肖像画と講演の依頼を最速で刈り取ります。
+    </p>
+
+    <h2>2. 2大高単価ソリューションのオファー設計</h2>
+    <div class="grid-2">
+        <div class="card" style="border:1.5px solid #1e3a8a;">
+            <div style="background:#1e3a8a; color:#fff; padding:3px 8px; border-radius:3px; font-weight:bold; font-size:8.8pt; margin-bottom:5px;">
+                ① 魂を刻む「特注リアル鉛筆肖像画」
+            </div>
+            <ul style="font-size:8.4pt;">
+                <li><strong>価格帯:</strong> 150,000円 〜 500,000円（額装・桐箱込）</li>
+                <li><strong>主な用途:</strong> 卒部記念、還暦・古希祝い、退任記念、愛犬・愛猫の永遠のメモリアル、企業創業者肖像</li>
+                <li><strong>提供価値:</strong> 写真以上の生命感。白と黒の濃淡で描かれた瞳が「言葉を超えて涙を誘う」一生の家宝。</li>
+            </ul>
+        </div>
+        <div class="card" style="border:1.5px solid #ea580c;">
+            <div style="background:#ea580c; color:#fff; padding:3px 8px; border-radius:3px; font-weight:bold; font-size:8.8pt; margin-bottom:5px;">
+                ② 組織を変革する「熱血モチベーション講演」
+            </div>
+            <ul style="font-size:8.4pt;">
+                <li><strong>価格帯:</strong> 150,000円 〜 300,000円（90〜120分）</li>
+                <li><strong>主な対象:</strong> 中小企業社員総会、安全大会、青年会議所、学校PTA・部活動壮行会</li>
+                <li><strong>講演テーマ:</strong> 『53歳、未経験からプロへ。常識を破る熱血突破力とワクワクの育て方』</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. LPの構成要素と心理的成約ステップ（CVR最適化）</h2>
+    <div class="step-container">
+        <div class="step-item" style="border-top-color:#ea580c;">
+            <div class="step-num">Step 1: 認知・共感</div>
+            <div class="step-title">ファーストビュー</div>
+            <div style="font-size:7.8pt; color:#475569;">圧倒的な原画ビジュアル＋「53歳から独学」の強烈なフックで離脱を防ぐ</div>
+        </div>
+        <div class="step-item" style="border-top-color:#1e3a8a;">
+            <div class="step-num">Step 2: 信用・裏付け</div>
+            <div class="step-title">実績＆推薦の声</div>
+            <div style="font-size:7.8pt; color:#475569;">早稲田早明戦写真、名門校指導実績、顧客の熱い感涙メッセージを提示</div>
+        </div>
+        <div class="step-item" style="border-top-color:#16a34a;">
+            <div class="step-num">Step 3: 不安解消</div>
+            <div class="step-title">明朗な料金・フロー</div>
+            <div style="font-size:7.8pt; color:#475569;">「写真送付から額装お届けまで」を3ステップで明示し、依頼ハードルを排除</div>
+        </div>
+        <div class="step-item" style="border-top-color:#9a3412;">
+            <div class="step-num">Step 4: 行動喚起</div>
+            <div class="step-title">LINE＆無料相談</div>
+            <div style="font-size:7.8pt; color:#475569;">「無料見積・構図相談」「LINE登録特典（スマホ待受）」で顧客情報を確保</div>
+        </div>
+    </div>
+
+    <h2>4. 成約シミュレーション（初期3ヶ月の回収計画）</h2>
+    <table>
+        <tr>
+            <th>項目</th>
+            <th>1ヶ月目（ローンチ）</th>
+            <th>2ヶ月目（OB展開）</th>
+            <th>3ヶ月目（法人展開）</th>
+        </tr>
+        <tr>
+            <td><strong>特注鉛筆肖像画</strong></td>
+            <td>2件（¥400,000）</td>
+            <td>4件（¥800,000）</td>
+            <td>5件（¥1,000,000）</td>
+        </tr>
+        <tr>
+            <td><strong>企業・学校講演</strong></td>
+            <td>1件（¥150,000）</td>
+            <td>2件（¥400,000）</td>
+            <td>3件（¥600,000）</td>
+        </tr>
+        <tr>
+            <td><strong>月間売上合計</strong></td>
+            <td class="text-accent" style="font-size:10pt;">¥550,000</td>
+            <td class="text-accent" style="font-size:10pt;">¥1,200,000</td>
+            <td class="text-accent" style="font-size:10pt;">¥1,600,000</td>
+        </tr>
+    </table>
+
+    <!-- ==========================================
+         PAGE 4: 【企画案C】オンライン校＆サロン
+         ========================================== -->
+    <div class="page-break"></div>
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">企画案 C</span>【オンライン校＆ファンサロン】仕様設計</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.4</div>
+    </div>
+
+    <div class="card card-green">
+        <div class="grid-2" style="margin-bottom:0;">
+            <div>
+                <strong>【コンセプト】</strong>「50代から始める、魂を揺さぶるリアル鉛筆画の世界」<br>
+                <strong>【ビジネスモデル】</strong>月額サブスクリプション課金型（安定ストック収入）
+            </div>
+            <div>
+                <strong>【ターゲット】</strong>定年前後のシニア層、生涯学習・趣味を探す50〜70代、絵画初心者<br>
+                <strong>【収益目標】</strong>会員数150名 ➔ 毎月80万〜100万円の自動継続売上
+            </div>
+        </div>
+    </div>
+
+    <h2>1. オンライン校が実現する「安定ストック収益」と「社会的価値」</h2>
+    <p>
+        肖像画や講演などの労働集約型サービスは、本人の稼働時間に限界があります。一方、オンラインスクールは<strong>「一度作った動画レッスンが自動で価値を生み続け、毎月継続的な会費が入る」</strong>最強のストックビジネスです。「絵心が全くない人でも、15分で立体的なリンゴが描ける」魔法の瑞司メソッドにより、受講生の自己肯定感と笑顔を育みます。
+    </p>
+
+    <h2>2. 2つの月額受講プラン設計</h2>
+    <div class="grid-2">
+        <div class="card" style="border:1.5px solid #cbd5e1;">
+            <div style="background:#334155; color:#fff; padding:3px 8px; border-radius:3px; font-weight:bold; font-size:8.8pt; margin-bottom:5px;">
+                【ライト会員】月額 3,980円（税込）
+            </div>
+            <div style="font-size:8.2pt; color:#64748b; margin-bottom:4px;">「自分のペースで楽しく学びたい初心者向け」</div>
+            <ul style="font-size:8.3pt;">
+                <li>基礎動画レッスン全20本以上が見放題（スマホ・タブレット対応）</li>
+                <li>月1回Zoom全体Q&Aライブ配信（リアルタイムで質問可能）</li>
+                <li>生徒限定オンライン掲示板での仲間との交流・情報交換</li>
+            </ul>
+        </div>
+        <div class="card" style="border:1.5px solid #16a34a;">
+            <div style="background:#16a34a; color:#fff; padding:3px 8px; border-radius:3px; font-weight:bold; font-size:8.8pt; margin-bottom:5px;">
+                【プロ・個別添削会員】月額 7,980円（税込）★一番人気
+            </div>
+            <div style="font-size:8.2pt; color:#166534; margin-bottom:4px;">「本格的に上達したい！おかもっちゃんから直接学びたい方向け」</div>
+            <ul style="font-size:8.3pt;">
+                <li>ライト会員の全特典をすべて利用可能</li>
+                <li><strong>月1回 おかもっちゃんが直接動画で作品を添削</strong>（動画で丁寧フィードバック）</li>
+                <li>年1回の銀座/WEB合同生徒作品展への優先出展権利</li>
+                <li>特別集中ワークショップへの会員限定割引</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. 退会を防ぎ、継続率（LTV）を最大化する「3つの仕掛け」</h2>
+    <div class="grid-3">
+        <div class="card">
+            <div class="step-title">① 否定ゼロの「全肯定指導」</div>
+            <p style="font-size:8.2pt; color:#475569; margin:0;">
+                上手い下手ではなく「その人だけの良さ・味」を見つけて全力で褒める熱血指導。生徒が自信を取り戻し、毎週通うのが楽しくなるコミュニティを作ります。
+            </p>
+        </div>
+        <div class="card">
+            <div class="step-title">② 15分スモールステップ</div>
+            <p style="font-size:8.2pt; color:#475569; margin:0;">
+                「鉛筆の削り方」「陰影のグラデーション」「瞳のハイライト」など、1本10〜15分の短い動画構成。忙しいシニアでも挫折せず達成感を味わえます。
+            </p>
+        </div>
+        <div class="card">
+            <div class="step-title">③ 年1回のリアル生徒展</div>
+            <p style="font-size:8.2pt; color:#475569; margin:0;">
+                「目標があるから描き続けられる」。東京・銀座やWeb上での合同展示会を開催。生徒同士が一生の仲間になり、コミュニティへの所属意識が高まります。
+            </p>
+        </div>
+    </div>
+
+    <h2>4. 会員数推移と年間ストック収益シミュレーション</h2>
+    <table>
+        <tr>
+            <th>展開期間</th>
+            <th>ライト会員（¥3,980）</th>
+            <th>プロ会員（¥7,980）</th>
+            <th>月間売上</th>
+            <th>年間換算売上</th>
+        </tr>
+        <tr>
+            <td><strong>開校3ヶ月目</strong></td>
+            <td>30名（¥119,400）</td>
+            <td>20名（¥159,600）</td>
+            <td>¥279,000</td>
+            <td>約 330万円</td>
+        </tr>
+        <tr>
+            <td><strong>開校半年後</strong></td>
+            <td>50名（¥199,000）</td>
+            <td>40名（¥319,200）</td>
+            <td>¥518,200</td>
+            <td>約 620万円</td>
+        </tr>
+        <tr>
+            <td><strong>開校1年後</strong></td>
+            <td>80名（¥318,400）</td>
+            <td>70名（¥558,600）</td>
+            <td class="text-accent" style="font-size:9.5pt;">¥877,000</td>
+            <td class="text-accent" style="font-size:9.5pt;">約 1,050万円</td>
+        </tr>
+    </table>
+
+    <!-- ==========================================
+         PAGE 5: 【企画案D】作家ギャラリー＆越境EC
+         ========================================== -->
+    <div class="page-break"></div>
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">企画案 D</span>【作家ギャラリー＆越境EC・体験予約】仕様設計</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.5</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #9333ea; background:#faf5ff;">
+        <div class="grid-2" style="margin-bottom:0;">
+            <div>
+                <strong>【コンセプト】</strong>「瑞司の原画・公式グッズ・和アート体験のグローバルショップ」<br>
+                <strong>【プラットフォーム】</strong>Shopify（多言語・多通貨対応）または BASE
+            </div>
+            <div>
+                <strong>【ターゲット】</strong>アートコレクター、台湾・欧米ファン、訪日外国人観光客（インバウンド）<br>
+                <strong>【収益形態】</strong>物販利益（高粗利）＋ 高単価プライベート体験予約
+            </div>
+        </div>
+    </div>
+
+    <h2>1. 越境EC＆インバウンド展開の必然性とポテンシャル</h2>
+    <p>
+        鉛筆画は「言葉の壁」が存在しない世界共通のアートです。特に日本の「職人芸」「白と黒の幽玄な美意識」は、海外旅行者や海外コレクターに高く評価されます。円安環境を追い風に、海外向け物販と<strong>「日本滞在時の特別な鉛筆画プライベート体験」</strong>を組み合わせることで、強固な外貨獲得チャネルを構築します。
+    </p>
+
+    <h2>2. 4大主力商品ラインナップ</h2>
+    <div class="grid-2">
+        <div class="card">
+            <div class="step-title">① 瑞司監修 初心者スターター画材キット</div>
+            <div style="font-size:8.2pt; color:#64748b; margin-bottom:3px;">価格: 4,800円（税込） ｜ 粗利率: 約55%</div>
+            <p style="font-size:8.3pt; color:#475569; margin:0;">
+                「何を買えばいいか分からない」初心者のための特選キット。瑞司愛用の鉛筆4本（4B, 2B, HB, 2H）、特選練り消し、スケッチブック、基本の削り方・描き方解説ミニ動画付き。
+            </p>
+        </div>
+        <div class="card">
+            <div class="step-title">② 毎日元気が湧く「熱血日めくり語録カレンダー」</div>
+            <div style="font-size:8.2pt; color:#64748b; margin-bottom:3px;">価格: 2,200円（税込） ｜ 粗利率: 約65%</div>
+            <p style="font-size:8.3pt; color:#475569; margin:0;">
+                おかもっちゃんの魂の言葉31篇と、名作鉛筆画を融合した卓上日めくりカレンダー。個展会場での手土産や、全国ファン・教え子へのギフトとして手軽に購入できるベストセラー候補。
+            </p>
+        </div>
+        <div class="card">
+            <div class="step-title">③ 高品位ジークレー複製原画（限定版画）</div>
+            <div style="font-size:8.2pt; color:#64748b; margin-bottom:3px;">価格: 28,000円 〜 68,000円 ｜ 直筆サイン入</div>
+            <p style="font-size:8.3pt; color:#475569; margin:0;">
+                美術館クオリティの高精細プリント技法「ジークレー」を採用。原画の微細な鉛筆の粉感まで忠実に再現。エディション番号と直筆サイン、高級額装付きでコレクターへ届けます。
+            </p>
+        </div>
+        <div class="card">
+            <div class="step-title">④ 【訪日客向け】和の鉛筆画プレミアム体験</div>
+            <div style="font-size:8.2pt; color:#64748b; margin-bottom:3px;">価格: 25,000円/名（2〜3時間、英語通訳付）</div>
+            <p style="font-size:8.3pt; color:#475569; margin:0;">
+                アトリエにて、日本の文化・精神性を学びながら瑞司の直接指導でミニ色紙に絵を描く特別体験。抹茶・和菓子付き。Airbnb ExperienceやTripAdvisor経由で予約受付。
+            </p>
+        </div>
+    </div>
+
+    <h2>3. グローバル対応（多言語・決済・配送）の仕組み</h2>
+    <table>
+        <tr>
+            <th style="width:25%;">機能</th>
+            <th style="width:40%;">採用システム・対応内容</th>
+            <th style="width:35%;">導入メリット</th>
+        </tr>
+        <tr>
+            <td><strong>多言語対応</strong></td>
+            <td>日本語 / 英語 / 繁体字（台湾・香港）の3言語切り替え</td>
+            <td>台湾の熱心なファンや欧米観光客がストレスなく購入</td>
+        </tr>
+        <tr>
+            <td><strong>越境決済</strong></td>
+            <td>Stripe / Shopify Payments / PayPal / Apple Pay</td>
+            <td>現地通貨（USD, TWD, EUR等）で安全に即時決済</td>
+        </tr>
+        <tr>
+            <td><strong>国際配送</strong></td>
+            <td>EMS（日本郵便） / FedEx連携、自動送料計算</td>
+            <td>送り状の自動印刷で梱包・発送の手間を最小化</td>
+        </tr>
+    </table>
+
+    <!-- ==========================================
+         PAGE 6: 収益シミュレーション＆実行ロードマップ
+         ========================================== -->
+    <div class="page-break"></div>
+    <div class="doc-header">
+        <div class="doc-title"><span class="doc-badge">統合計画</span>収益シミュレーション＆実行ロードマップ</div>
+        <div class="doc-meta">Web展開 総合企画資料 ｜ P.6</div>
+    </div>
+
+    <div class="card card-highlight">
+        <p style="margin:0; font-size:9.2pt;">
+            4つの企画案はバラバラに存在するのではなく、<strong>「フェーズに合わせて段階的に立ち上げ、相互に顧客を循環させる」</strong>ことで収益を複利で伸ばしていきます。
+        </p>
+    </div>
+
+    <h2>1. 段階的リリース・ロードマップ（4フェーズ）</h2>
+    <div class="step-container">
+        <div class="step-item" style="border-top-color:#ea580c;">
+            <div class="step-num">Phase 1（即時〜1ヶ月）</div>
+            <div class="step-title">【案B】高単価LP公開</div>
+            <div style="font-size:7.8pt; color:#475569;">既存人脈へ案内。特注肖像画と企業講演を受注し、初期資金を獲得。</div>
+        </div>
+        <div class="step-item" style="border-top-color:#1e3a8a;">
+            <div class="step-num">Phase 2（2ヶ月目〜）</div>
+            <div class="step-title">【案A】ポータル公開</div>
+            <div style="font-size:7.8pt; color:#475569;">ブランド母艦を確立。SEO流入とメディア・教育関係の信用を獲得。</div>
+        </div>
+        <div class="step-item" style="border-top-color:#16a34a;">
+            <div class="step-num">Phase 3（3ヶ月目〜）</div>
+            <div class="step-title">【案C】オンライン校開校</div>
+            <div style="font-size:7.8pt; color:#475569;">第1期生50名募集。月額サブスクの安定ストック収益ラインを確立。</div>
+        </div>
+        <div class="step-item" style="border-top-color:#9333ea;">
+            <div class="step-num">Phase 4（半年後〜）</div>
+            <div class="step-title">【案D】越境EC本格化</div>
+            <div style="font-size:7.8pt; color:#475569;">画材キット販売と訪日体験予約を開始。外貨と物販利益を拡大。</div>
+        </div>
+    </div>
+
+    <h2>2. 3カ年 収益シミュレーション推移</h2>
+    <table>
+        <tr>
+            <th>事業収益の柱</th>
+            <th>1年目（立ち上げ期）</th>
+            <th>2年目（成長・拡大期）</th>
+            <th>3年目（確立・多角化期）</th>
+        </tr>
+        <tr>
+            <td><strong>特注鉛筆肖像画</strong>（単発）</td>
+            <td>¥6,000,000（年30点）</td>
+            <td>¥8,000,000（年35点・単価UP）</td>
+            <td>¥10,000,000（年40点）</td>
+        </tr>
+        <tr>
+            <td><strong>企業・学校熱血講演</strong>（単発）</td>
+            <td>¥3,000,000（年15回）</td>
+            <td>¥4,500,000（年20回）</td>
+            <td>¥6,000,000（年25回＋研修顧問）</td>
+        </tr>
+        <tr>
+            <td><strong>オンライン校＆サロン</strong>（ストック）</td>
+            <td>¥4,200,000（平均70名）</td>
+            <td>¥8,400,000（平均140名）</td>
+            <td>¥14,400,000（平均200名＋上級校）</td>
+        </tr>
+        <tr>
+            <td><strong>EC物販＆和アート体験</strong>（物販）</td>
+            <td>¥1,800,000（国内中心）</td>
+            <td>¥3,600,000（越境EC本格化）</td>
+            <td>¥6,000,000（訪日体験フル稼働）</td>
+        </tr>
+        <tr style="background:#fef2f2;">
+            <td style="font-weight:bold; color:#991b1b;">年間総合売上推移</td>
+            <td style="font-weight:bold; color:#991b1b; font-size:10.5pt;">¥15,000,000</td>
+            <td style="font-weight:bold; color:#991b1b; font-size:10.5pt;">¥24,500,000</td>
+            <td style="font-weight:bold; color:#991b1b; font-size:11pt;">¥36,400,000</td>
+        </tr>
+    </table>
+
+    <h2>3. 4つの企画案のシステム選定と構築費用一覧</h2>
+    <table>
+        <tr>
+            <th>企画案</th>
+            <th>推奨システム / CMS</th>
+            <th>初期構築の目安費用</th>
+            <th>月額運用コスト</th>
+        </tr>
+        <tr>
+            <td><strong>【案A】ブランドポータル</strong></td>
+            <td>STUDIO / WordPress</td>
+            <td>自作/内製: 0円 ｜ 外注: 30〜50万円</td>
+            <td>ドメイン・サーバー: 約 1,500円/月</td>
+        </tr>
+        <tr>
+            <td><strong>【案B】即効獲得LP</strong></td>
+            <td>STUDIO / ペライチ</td>
+            <td>自作/内製: 0円 ｜ 外注: 15〜25万円</td>
+            <td>STUDIO CMSプラン: 約 2,000円/月</td>
+        </tr>
+        <tr>
+            <td><strong>【案C】オンライン校</strong></td>
+            <td>Teachable / Kajabi / DMM</td>
+            <td>設定・初期構築: 10〜20万円</td>
+            <td>システム利用料: 約 6,000〜12,000円/月</td>
+        </tr>
+        <tr>
+            <td><strong>【案D】越境ECショップ</strong></td>
+            <td>Shopify / BASE</td>
+            <td>初期設定・商品登録: 5〜15万円</td>
+            <td>Shopify Basic: 約 4,000円/月</td>
+        </tr>
+    </table>
+
+    <div class="card card-accent" style="margin-top:6px;">
+        <div style="font-weight:bold; color:#9a3412; font-size:9.1pt; margin-bottom:2px;">
+            【結論：最善のネクストアクション】
+        </div>
+        <p style="margin:0; font-size:8.6pt; line-height:1.45;">
+            まずは<strong>「プロトタイプ【案B】」をベースに最速でLPを一般公開</strong>し、高校野球・早大OBや経営者仲間にLINE・SNSで告知を開始します。特注肖像画の初回受注（15万円〜）が決まった時点で開発費用は完全に回収できるため、ノーリスクで最大の投資対効果を発揮できます。
+        </p>
+    </div>
+
+</body>
+</html>
