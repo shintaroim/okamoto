@@ -37,7 +37,8 @@
 
 ### 🚀 オンラインで体験する（GitHub Pages）
 ブラウザから以下のURLで直接プロトタイプを操作・閲覧できます：  
-👉 **[https://shintaroim.github.io/okamoto/](https://shintaroim.github.io/okamoto/)**
+👉 **Webプロトタイプ**: [https://shintaroim.github.io/okamoto/](https://shintaroim.github.io/okamoto/)  
+👉 **公開資料一覧（materials/）**: [https://shintaroim.github.io/okamoto/materials/](https://shintaroim.github.io/okamoto/materials/)
 
 ### 💻 ローカルPCで体験する
 - **起動方法**:  
