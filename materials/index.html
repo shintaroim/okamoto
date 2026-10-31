@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>岡本武司 プロジェクト公開資料一覧（Materials）</title>
+    <title>岡本武司 プロジェクト公開資料一覧（01_完成成果物_PDF / Materials）</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
         }
         .hero p {
             color: #94a3b8;
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             font-size: 0.95rem;
         }
@@ -96,12 +96,93 @@
             padding: 0 20px;
         }
 
+        /* クイックテーブル */
+        .table-section {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-top: -24px;
+            margin-bottom: 36px;
+            box-shadow: var(--card-shadow);
+        }
+        .table-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            color: var(--navy);
+            padding: 12px 14px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        tr:hover td {
+            background: #f8fafc;
+        }
+        .btn-table {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+            background: var(--primary);
+            transition: all 0.2s;
+            margin-right: 4px;
+        }
+        .btn-table:hover {
+            background: var(--primary-dark);
+        }
+        .btn-table-sub {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--slate);
+            background: #e2e8f0;
+            transition: all 0.2s;
+        }
+        .btn-table-sub:hover {
+            background: #cbd5e1;
+        }
+
         /* 資料カードグリッド */
+        .section-header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 24px;
-            margin-top: -24px;
         }
 
         .material-card {
@@ -242,12 +323,79 @@
     </nav>
 
     <header class="hero">
-        <div class="hero-badge">Project Materials</div>
-        <h1>岡本武司氏 プロジェクト公開資料一覧</h1>
-        <p>元箱根駅伝 早稲田大学競走部主将・岡本武司（瑞司）氏のセカンドキャリア支援、収益化ビジネスモデル、Webプロトタイプ設計提案書の公式PDF一覧です。</p>
+        <div class="hero-badge">01_完成成果物_PDF / Materials</div>
+        <h1>岡本武司氏 プロジェクト完成成果物（PDF資料一式）</h1>
+        <p>「01_完成成果物_PDF」フォルダ内のすべての完成版資料をオンライン公開しています。各資料をブラウザでそのまま直接閲覧、またはダウンロードしていただけます。</p>
     </header>
 
     <main class="container">
+
+        <!-- クイックアクセス一覧表 -->
+        <section class="table-section">
+            <h2 class="table-title">📑 完成成果物 PDF 全5件 クイックリンク一覧</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">資料名（日本語ファイル名）</th>
+                            <th style="width: 15%;">種別 / 形式</th>
+                            <th style="width: 15%;">サイズ</th>
+                            <th style="width: 25%;">アクション</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>岡本武司_全企画案_詳細説明資料.pdf</strong><br><small style="color:var(--muted);">エイリアス: 01_project_presentation.pdf</small></td>
+                            <td>横型スライド（全6P）</td>
+                            <td>約600 KB</td>
+                            <td>
+                                <a href="岡本武司_全企画案_詳細説明資料.pdf" target="_blank" class="btn-table">直接開く ↗</a>
+                                <a href="01_project_presentation.pdf" download="岡本武司_全企画案_詳細説明資料.pdf" class="btn-table-sub">保存</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>岡本武司_Webプロトタイプ画面集.pdf</strong><br><small style="color:var(--muted);">エイリアス: 02_prototype_screens.pdf</small></td>
+                            <td>横型画面集（全5P）</td>
+                            <td>約1.2 MB</td>
+                            <td>
+                                <a href="岡本武司_Webプロトタイプ画面集.pdf" target="_blank" class="btn-table">直接開く ↗</a>
+                                <a href="02_prototype_screens.pdf" download="岡本武司_Webプロトタイプ画面集.pdf" class="btn-table-sub">保存</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>岡本武司_ウェブサイト構築提案書.pdf</strong><br><small style="color:var(--muted);">エイリアス: 03_website_proposal.pdf</small></td>
+                            <td>縦型提案レポート</td>
+                            <td>約1.7 MB</td>
+                            <td>
+                                <a href="岡本武司_ウェブサイト構築提案書.pdf" target="_blank" class="btn-table">直接開く ↗</a>
+                                <a href="03_website_proposal.pdf" download="岡本武司_ウェブサイト構築提案書.pdf" class="btn-table-sub">保存</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>岡本武司_ビジネスアイデア_収益ダッシュボード.pdf</strong><br><small style="color:var(--muted);">エイリアス: 04_business_dashboard.pdf</small></td>
+                            <td>縦型詳細レポート</td>
+                            <td>約2.1 MB</td>
+                            <td>
+                                <a href="岡本武司_ビジネスアイデア_収益ダッシュボード.pdf" target="_blank" class="btn-table">直接開く ↗</a>
+                                <a href="04_business_dashboard.pdf" download="岡本武司_ビジネスアイデア_収益ダッシュボード.pdf" class="btn-table-sub">保存</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>岡本武司_ビジネスアイデア集.pdf</strong><br><small style="color:var(--muted);">エイリアス: 05_business_ideas.pdf</small></td>
+                            <td>縦型企画集</td>
+                            <td>約900 KB</td>
+                            <td>
+                                <a href="岡本武司_ビジネスアイデア集.pdf" target="_blank" class="btn-table">直接開く ↗</a>
+                                <a href="05_business_ideas.pdf" download="岡本武司_ビジネスアイデア集.pdf" class="btn-table-sub">保存</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 各資料の詳細カード -->
+        <h2 class="section-header">🔍 各資料の詳細解説と閲覧</h2>
         <div class="materials-grid">
 
             <!-- 1. 全企画案 総合説明資料 (Featured) -->
@@ -264,8 +412,8 @@
                         <span>📦 約600KB</span>
                     </div>
                     <div class="card-actions">
-                        <a href="01_project_presentation.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
-                        <a href="01_project_presentation.pdf" download="岡本武司_全企画案_詳細説明資料.pdf" class="btn btn-outline">保存 (PDF)</a>
+                        <a href="岡本武司_全企画案_詳細説明資料.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
+                        <a href="01_project_presentation.pdf" download="岡本武司_全企画案_詳細説明資料.pdf" class="btn btn-outline">PDF保存</a>
                     </div>
                 </div>
             </div>
@@ -284,8 +432,8 @@
                         <span>📦 約1.2MB</span>
                     </div>
                     <div class="card-actions">
-                        <a href="02_prototype_screens.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
-                        <a href="02_prototype_screens.pdf" download="岡本武司_Webプロトタイプ画面集.pdf" class="btn btn-outline">保存 (PDF)</a>
+                        <a href="岡本武司_Webプロトタイプ画面集.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
+                        <a href="02_prototype_screens.pdf" download="岡本武司_Webプロトタイプ画面集.pdf" class="btn btn-outline">PDF保存</a>
                     </div>
                 </div>
             </div>
@@ -304,8 +452,8 @@
                         <span>📦 約1.7MB</span>
                     </div>
                     <div class="card-actions">
-                        <a href="03_website_proposal.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
-                        <a href="03_website_proposal.pdf" download="岡本武司_ウェブサイト構築提案書.pdf" class="btn btn-outline">保存 (PDF)</a>
+                        <a href="岡本武司_ウェブサイト構築提案書.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
+                        <a href="03_website_proposal.pdf" download="岡本武司_ウェブサイト構築提案書.pdf" class="btn btn-outline">PDF保存</a>
                     </div>
                 </div>
             </div>
@@ -324,8 +472,8 @@
                         <span>📦 約2.1MB</span>
                     </div>
                     <div class="card-actions">
-                        <a href="04_business_dashboard.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
-                        <a href="04_business_dashboard.pdf" download="岡本武司_ビジネスアイデア_収益ダッシュボード.pdf" class="btn btn-outline">保存 (PDF)</a>
+                        <a href="岡本武司_ビジネスアイデア_収益ダッシュボード.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
+                        <a href="04_business_dashboard.pdf" download="岡本武司_ビジネスアイデア_収益ダッシュボード.pdf" class="btn btn-outline">PDF保存</a>
                     </div>
                 </div>
             </div>
@@ -344,8 +492,8 @@
                         <span>📦 約900KB</span>
                     </div>
                     <div class="card-actions">
-                        <a href="05_business_ideas.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
-                        <a href="05_business_ideas.pdf" download="岡本武司_ビジネスアイデア集.pdf" class="btn btn-outline">保存 (PDF)</a>
+                        <a href="岡本武司_ビジネスアイデア集.pdf" target="_blank" class="btn btn-primary">ブラウザで閲覧 ↗</a>
+                        <a href="05_business_ideas.pdf" download="岡本武司_ビジネスアイデア集.pdf" class="btn btn-outline">PDF保存</a>
                     </div>
                 </div>
             </div>
